@@ -1,0 +1,48 @@
+<div class="example-container" [class.example-is-mobile]="!mobileQuery.matches">
+    <mat-toolbar class="example-toolbar">
+        <div class="row">
+            <div class="col">
+                <img src="../../../assets/logo.webp" width="150">
+            </div>
+            <div class="col menu_toolbar toggle_menu">
+                <mat-icon mat-icon-button (click)="snav.toggle()">menu</mat-icon>
+            </div>
+        </div>
+        <div class="menu_toolbar points_menu">
+            <mat-icon mat-icon-button [matMenuTriggerFor]="menu">more_vert</mat-icon>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                    <mat-icon>logout</mat-icon>
+                    <span>Cerrar sesión</span>
+                </button>
+            </mat-menu>
+        </div>
+    </mat-toolbar>
+
+    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 0 : 100">
+        <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+            fixedTopGap="100" [opened]="!mobileQuery.matches">
+            <mat-nav-list>
+                <div>
+                    <mat-accordion class="example-headers-align" multi>
+                        <!-- <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title><mat-icon>money</mat-icon>Ventas</mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <mat-nav-list>
+                                <a mat-list-item routerLink="/nuevaventa">Registrar una venta</a>
+                                <a mat-list-item routerLink="/ventas">Ver listado de ventas</a>
+                            </mat-nav-list>
+                        </mat-expansion-panel> -->
+                    </mat-accordion>
+                    <a mat-list-item routerLink="/main">Inicio</a>
+                    <a mat-list-item>Candidatos</a>
+                    <a mat-list-item class="cerrarS">Cerrar sesión</a>
+                </div>
+            </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

@@ -1,0 +1,119 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.example-is-mobile .example-toolbar {
+    position: fixed;
+    /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+    z-index: 2;
+}
+
+h1.example-app-name {
+    margin-left: 8px;
+}
+
+.example-sidenav-container {
+    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+         causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+    flex: 1;
+}
+
+.example-is-mobile .example-sidenav-container {
+    /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+         `<body>` to be our scrolling element for mobile layouts. */
+    flex: 1 0 auto;
+}
+
+.mat-toolbar {
+    background-image: linear-gradient(to right, #b929e5, #781ee3);
+    height: 100px;
+
+    & h4 {
+        text-transform: capitalize;
+    }
+
+
+    & .menu_toolbar {
+        position: absolute;
+        height: inherit;
+        width: 50px;
+
+        & mat-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: inherit;
+            font-size: 45px;
+        }
+
+        & mat-icon:hover {
+            cursor: pointer;
+        }
+    }
+    & .toggle_menu{
+        left: 180px;
+        top: 30px;
+        @media screen and (max-width: 767px) {
+            right: 16px!important;
+            left: auto;
+          }
+    }
+    & .points_menu{
+        right: 2px;
+        @media screen and (max-width: 767px) {
+            display: none;
+            
+          }
+    }
+
+}
+
+mat-sidenav-container {
+    
+    & mat-accordion {
+        background-color: #191919;
+    }
+
+    & mat-expansion-panel {
+        background-color: #191919;
+
+    }
+
+    & mat-panel-title {
+        color: #8d927e;
+    }
+
+    & mat-sidenav {
+        width: 250px!important;
+        background-color: #191919;
+    }
+
+    & ::ng-deep .mdc-list-item__primary-text {
+        color: #8d927e !important;
+    }
+
+}
+
+mat-toolbar {
+    color: white;
+}
+
+button:focus {
+    outline: none;
+}
+.cerrarS{
+    display: none;
+    position: absolute;
+    bottom: 0;
+    justify-content: center;
+    text-align: center;
+    @media screen and (max-width: 767px) {
+        display: block;
+      }
+}

@@ -1,0 +1,22 @@
+.card {
+    width: 400px;
+  
+    &:hover {
+      background-color: #781ee3 !important;
+  
+      .numbers {
+        color: white !important;
+      }
+    }
+  
+    .numbers {
+      color: #781ee3 !important;
+      font-size: 1.5rem!important;
+    }
+  
+    @media screen and (max-width: 767px) {
+      width: 330px;
+      
+    }
+  }
+  
