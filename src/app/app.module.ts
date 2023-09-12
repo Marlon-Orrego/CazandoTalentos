@@ -18,6 +18,10 @@ import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { CardMainComponent } from './components/card-main/card-main.component';
 import { MainComponent } from './components/main/main.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -41,7 +45,10 @@ import { MainComponent } from './components/main/main.component';
     MatSidenavModule,
     MatListModule,
     MatExpansionModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]

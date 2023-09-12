@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "CazandoTalentos",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cazandotalentos-910df": {
+      "hosting": {
+        "CazandoTalentos": [
+          "cazandotalentos-910df"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cazandotalentos-910df"
+  }
+}
